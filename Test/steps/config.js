@@ -6,6 +6,14 @@ exports.config = {
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     baseUrl: "http://localhost:8808/",
+    multiCapabilities: [
+        {
+            browserName: "firefox",
+        },
+        {
+            browserName: "chrome"
+        }
+    ],
     suites: {
         "homepage": "../features/Home.feature",
         "coursedetails": "../features/CourseDetail.feature"

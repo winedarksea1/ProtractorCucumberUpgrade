@@ -39,17 +39,22 @@
   "devDependencies": {
     "@types/chai": "^4.0.1",
     "@types/core-js": "~0.9.34",
+    "@types/load-json-file": "^2.0.7",
     "@types/node": "~6.0.46",
+    "@types/xlsx": "0.0.36",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "concurrently": "2.2.0",
     "cucumber": "^2.3.1",
     "cucumber-html-reporter": "^2.0.0",
     "jasmine": "^2.5.3",
+    "load-json-file": "^5.0.0",
     "protractor": "^5.1.1",
     "protractor-cucumber-framework": "^3.1.2",
     "ts-node": "^3.1.0",
-    "typescript": "^2.3.4"
+    "ts-xlsx": "0.0.11",
+    "typescript": "^2.3.4",
+    "xlsx": "^0.12.13"
   },
   "repository": {}
 }

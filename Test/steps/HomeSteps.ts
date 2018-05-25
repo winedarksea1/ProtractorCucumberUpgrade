@@ -5,8 +5,8 @@ import { CourseDetailsPage } from "../pages/CourseDetails";
 
 defineSupportCode(({Given, When, Then}) => {
     
-    var homePage = new HomePage();
-    var coursedetails = new CourseDetailsPage();
+    let homePage = new HomePage();
+    let coursedetails = new CourseDetailsPage();
 
     Given(/^I navigate to application$/, async () => {
         await homePage.OpenBrowser("http://localhost:8808/");
@@ -35,5 +35,14 @@ defineSupportCode(({Given, When, Then}) => {
 
         assert.deepEqual(localTable, table.rows(), 'The datasource does not math with the step definition table');
     });
+
+    When(/^I enter text in search from external data source$/, async () => {
+        await homePage.EnterDataInSearchFromJson();
+    });
+    
+    // When(/^I enter text in search from external excel source$/, async () => {
+    //     await homePage.EnterDataInSearchFromExcel();
+    // });
+        
 
 });

@@ -4,7 +4,7 @@
     "line": 1,
     "name": "To work with home page",
     "tags": [],
-    "uri": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/features/Home.feature",
+    "uri": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/features/Home.feature",
     "elements": [
       {
         "keyword": "Scenario",
@@ -24,11 +24,11 @@
             "name": "I get all the heading",
             "result": {
               "status": "passed",
-              "duration": 76
+              "duration": 157
             },
             "line": 5,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:15"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:15"
             }
           },
           {
@@ -37,11 +37,11 @@
             "name": "I click the 'Selenium framework development' course",
             "result": {
               "status": "passed",
-              "duration": 189
+              "duration": 434
             },
             "line": 6,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:19"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:19"
             }
           },
           {
@@ -77,7 +77,7 @@
             },
             "line": 8,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:27"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:27"
             }
           }
         ]
@@ -100,11 +100,11 @@
             "name": "I get all the heading",
             "result": {
               "status": "passed",
-              "duration": 61
+              "duration": 73
             },
             "line": 15,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:15"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:15"
             }
           },
           {
@@ -113,11 +113,11 @@
             "name": "I click the 'Selenium framework development' course",
             "result": {
               "status": "passed",
-              "duration": 167
+              "duration": 492
             },
             "line": 16,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:19"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:19"
             }
           },
           {
@@ -126,11 +126,64 @@
             "name": "I should see 'Selenium framework development' course in coursedetails page",
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1
             },
             "line": 17,
             "match": {
-              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:23"
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:23"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Search for course from External DataSource",
+        "tags": [
+          {
+            "line": 19,
+            "name": "@regression"
+          }
+        ],
+        "id": "to-work-with-home-page;search-for-course-from-external-datasource",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I navigate to application",
+            "result": {
+              "status": "passed",
+              "duration": 2389
+            },
+            "line": 21,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:11"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I enter text in search from external data source",
+            "result": {
+              "status": "passed",
+              "duration": 2
+            },
+            "line": 22,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:39"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I get all the heading",
+            "result": {
+              "status": "passed",
+              "duration": 181
+            },
+            "line": 23,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/EACourseApp/Test/steps/HomeSteps.ts:15"
             }
           }
         ]

@@ -1,9 +1,11 @@
 import { defineSupportCode } from 'cucumber'
-import { browser } from "protractor";
 import { config } from "../steps/config";
 import { JsonFormatter } from "../reporting/CucumberReportExtension";
+import { browser } from 'protractor';
 
-defineSupportCode(({ registerHandler, registerListener }) => {
+defineSupportCode(({ registerHandler, registerListener, setDefaultTimeout }) => {
+
+    setDefaultTimeout(50000);
 
     registerHandler('BeforeFeature', async () => {
         console.log("Executing before feature !!");
@@ -23,6 +25,18 @@ defineSupportCode(({ registerHandler, registerListener }) => {
 
     registerHandler('AfterFeature', async () => {
         console.log("Executing After feature !!");
+    });
+
+    registerHandler('StepResult', async (StepResult) => {
+        if (StepResult.isFailed()) {
+            return browser.takeScreenshot().then(screenshot => {
+                let decodedImage = new Buffer(screenshot, 'base64');
+                StepResult.attachments.push({
+                    data: decodedImage.toString('base64'),
+                    mimeType: 'image/png'
+                });
+            });
+        }
     });
 
     registerListener(JsonFormatter);
