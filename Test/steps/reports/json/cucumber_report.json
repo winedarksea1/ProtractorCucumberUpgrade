@@ -1,0 +1,141 @@
+[
+  {
+    "keyword": "Feature",
+    "line": 1,
+    "name": "To work with home page",
+    "tags": [],
+    "uri": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/features/Home.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Click course of application",
+        "tags": [
+          {
+            "line": 3,
+            "name": "@smoke"
+          }
+        ],
+        "id": "to-work-with-home-page;click-course-of-application",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I get all the heading",
+            "result": {
+              "status": "passed",
+              "duration": 76
+            },
+            "line": 5,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:15"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click the 'Selenium framework development' course",
+            "result": {
+              "status": "passed",
+              "duration": 189
+            },
+            "line": 6,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:19"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Courses",
+                      "Duration"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Selenium",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Java",
+                      "3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "name": "I should see all course information in coursedetails page",
+            "result": {
+              "status": "passed",
+              "duration": 4
+            },
+            "line": 8,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:27"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Click course of application second time",
+        "tags": [
+          {
+            "line": 13,
+            "name": "@regression"
+          }
+        ],
+        "id": "to-work-with-home-page;click-course-of-application-second-time",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I get all the heading",
+            "result": {
+              "status": "passed",
+              "duration": 61
+            },
+            "line": 15,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:15"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click the 'Selenium framework development' course",
+            "result": {
+              "status": "passed",
+              "duration": 167
+            },
+            "line": 16,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:19"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should see 'Selenium framework development' course in coursedetails page",
+            "result": {
+              "status": "passed",
+              "duration": 0
+            },
+            "line": 17,
+            "match": {
+              "location": "/Users/andrewmcgovern/Desktop/protractor-stuff/EACourseApp/Test/steps/HomeSteps.ts:23"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "to-work-with-home-page"
+  }
+]
