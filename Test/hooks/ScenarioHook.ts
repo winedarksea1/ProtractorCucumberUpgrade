@@ -1,45 +1,31 @@
-import { defineSupportCode } from 'cucumber'
 import { config } from "../steps/config";
-import { JsonFormatter } from "../reporting/CucumberReportExtension";
 import { browser } from 'protractor';
+const { BeforeAll } = require('cucumber');
+import { defineSupportCode, setDefaultTimeout, Before, AfterAll, After, Status } from 'cucumber';
+import { CucumberReportExtension } from "../reporting/CucumberReportExtension";
 
-defineSupportCode(({ registerHandler, registerListener, setDefaultTimeout }) => {
+setDefaultTimeout(50000);
 
-    setDefaultTimeout(50000);
-
-    registerHandler('BeforeFeature', async () => {
-        console.log("Executing before feature !!");
-    });
-
-    registerHandler('BeforeScenario', async () => {
-        await browser.get(config.baseUrl);
-    });
-
-    registerHandler('AfterStep', async () => {
-        console.log("Step executed")
-    });
-
-    registerHandler('AfterScenario', async () => {
-        console.log("Scenario executed !!");
-    });
-
-    registerHandler('AfterFeature', async () => {
-        console.log("Executing After feature !!");
-    });
-
-    registerHandler('StepResult', async (StepResult) => {
-        if (StepResult.isFailed()) {
-            return browser.takeScreenshot().then(screenshot => {
-                let decodedImage = new Buffer(screenshot, 'base64');
-                StepResult.attachments.push({
-                    data: decodedImage.toString('base64'),
-                    mimeType: 'image/png'
-                });
-            });
-        }
-    });
-
-    registerListener(JsonFormatter);
-
+BeforeAll(async () => {
+    await browser.get('http://localhost:8808');
+    let jsonDir = process.cwd() + '/reports/json';
+    CucumberReportExtension.CreateReportFile(jsonDir);
+    console.log('Starting the application');
 });
+
+AfterAll(async () => {
+    browser.quit();
+    console.log("Cleanup!!")
+});
+
+After(async function (Scenario) {
+    console.log('Executing After feature!!');
+    if (Scenario.result.status === Status.FAILED) {
+        const screenShot = await browser.takeScreenshot();
+        this.attach(screenShot, 'image/png');
+    }
+});
+
+
+
 

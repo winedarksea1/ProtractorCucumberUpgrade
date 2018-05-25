@@ -1,4 +1,5 @@
 import { Config } from 'protractor';
+import { CucumberReportExtension } from '../reporting/CucumberReportExtension';
 
 export let config: Config = {
     
@@ -10,14 +11,14 @@ export let config: Config = {
     
     baseUrl: "http://localhost:8808/",
 
-    multiCapabilities: [
-        {
-            browserName: "firefox",
-        },
-        {
-            browserName: "chrome"
-        }
-    ],
+    // multiCapabilities: [
+    //     {
+    //         browserName: "firefox",
+    //     },
+    //     {
+    //         browserName: "chrome"
+    //     }
+    // ],
 
     suites: {
         "homepage": "../features/Home.feature",
@@ -27,8 +28,13 @@ export let config: Config = {
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         strict: true,
-        format: ['pretty'],
+        // format: ['pretty'],
+        format: 'json:./reports/json/cucumber_report.json',
         require: ['../steps/*.js', '../hooks/*.js'],
         tags: '@smoke or @regression'
+    },
+
+    onComplete: () => {
+        CucumberReportExtension.GenerateCucumberReport();
     }
 }

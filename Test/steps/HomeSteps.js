@@ -40,72 +40,63 @@ var cucumber_1 = require("cucumber");
 var HomePage_1 = require("../pages/HomePage");
 var chai_1 = require("chai");
 var CourseDetails_1 = require("../pages/CourseDetails");
-cucumber_1.defineSupportCode(function (_a) {
-    var Given = _a.Given, When = _a.When, Then = _a.Then;
-    var homePage = new HomePage_1.HomePage();
-    var coursedetails = new CourseDetails_1.CourseDetailsPage();
-    Given(/^I navigate to application$/, function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, homePage.OpenBrowser("http://localhost:8808/")];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
+var homePage = new HomePage_1.HomePage();
+var coursedetails = new CourseDetails_1.CourseDetailsPage();
+// Given(/^I navigate to application$/, async () => {
+//     // await homePage.OpenBrowser("http://localhost:8808/");
+//     await homePage.OpenBrowser(config.baseUrl);
+// });
+cucumber_1.When(/^I get all the heading$/, function () { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, homePage.GetAllHeadings()];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+cucumber_1.When(/^I click the '([^\"]*)' course$/, function (headingText) { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, homePage.ClickFirstHeading(headingText.toString())];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+cucumber_1.Then(/^I should see '([^\"]*)' course in coursedetails page$/, function (course) { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        chai_1.expect(coursedetails.GetCourseHeading).to.be.not.null;
+        return [2 /*return*/];
+    });
+}); });
+cucumber_1.Then(/^I should see all course information in coursedetails page$/, function (table) { return __awaiter(_this, void 0, void 0, function () {
+    var localTable;
+    return __generator(this, function (_a) {
+        localTable = [
+            ['Selenium', '2'],
+            ['Java', '3']
+        ];
+        table.rows().forEach(function (row) {
+            console.log(row);
         });
-    }); });
-    When(/^I get all the heading$/, function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, homePage.GetAllHeadings()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    When(/^I click the '([^\"]*)' course$/, function (headingText) { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, homePage.ClickFirstHeading(headingText.toString())];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    Then(/^I should see '([^\"]*)' course in coursedetails page$/, function (course) { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            chai_1.expect(coursedetails.GetCourseHeading).to.be.not.null;
-            return [2 /*return*/];
-        });
-    }); });
-    Then(/^I should see all course information in coursedetails page$/, function (table) { return __awaiter(_this, void 0, void 0, function () {
-        var localTable;
-        return __generator(this, function (_a) {
-            localTable = [
-                ['Selenium', '2'],
-                ['Java', '3']
-            ];
-            table.rows().forEach(function (row) {
-                console.log(row);
-            });
-            chai_1.assert.deepEqual(localTable, table.rows(), 'The datasource does not math with the step definition table');
-            return [2 /*return*/];
-        });
-    }); });
-    When(/^I enter text in search from external data source$/, function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, homePage.EnterDataInSearchFromJson()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    // When(/^I enter text in search from external excel source$/, async () => {
-    //     await homePage.EnterDataInSearchFromExcel();
-    // });
-});
+        chai_1.assert.deepEqual(localTable, table.rows(), 'The datasource does not math with the step definition table');
+        return [2 /*return*/];
+    });
+}); });
+cucumber_1.When(/^I enter text in search from external data source$/, function () { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, homePage.EnterDataInSearchFromJson()];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+// When(/^I enter text in search from external excel source$/, async () => {
+//     await homePage.EnterDataInSearchFromExcel();
+// });
 //# sourceMappingURL=HomeSteps.js.map

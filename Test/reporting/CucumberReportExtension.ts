@@ -5,14 +5,14 @@ const Cucumber = require('cucumber')
 
 export class CucumberReportExtension {
 
-    private jsonDir = process.cwd() + "/reports/json";
-    private htmlDir = process.cwd() + "/reports/html";
-    private jsonFile = this.jsonDir + "/cucumber_report.json";
+    private static jsonDir = process.cwd() + "/reports/json";
+    private static htmlDir = process.cwd() + "/reports/html";
+    private static jsonFile = CucumberReportExtension.jsonDir + "/cucumber_report.json";
 
-    private cucumberReporterOptions = {
+    private static cucumberReporterOptions = {
         theme: "bootstrap",
-        jsonFile: this.jsonFile,
-        output: this.htmlDir + "/cucumber_reporter.html",
+        jsonFile: CucumberReportExtension.jsonFile,
+        output: CucumberReportExtension.htmlDir + "/cucumber_reporter.html",
         reportSuiteAsScenarios: true,
         metadata: {
             "App Version":"0.0.1",
@@ -24,28 +24,16 @@ export class CucumberReportExtension {
         }
     };
 
-    private CreateReportFile(dirName, fileName, fileContent) {
+    public static CreateReportFile(dirName) {
         //Check if the directory exist
-        if (!fs.existsSync(dirName))
+        if (!fs.existsSync(dirName)) {
             mkdirp.sync(dirName);
-        try {
-            fs.writeFileSync(fileName, fileContent);
-        }
-        catch (message) {
-            console.log("Failed to create File/Directory :" + message);
         }
     }
 
-    private GenerateCucumberReport(cucumberReportOption){
-        report.generate(cucumberReportOption);
+    public static GenerateCucumberReport(){
+        report.generate(CucumberReportExtension.cucumberReporterOptions);
     }
 
-    JsonFormatter = new Cucumber.JsonFormatter({
-        log: jLog => {
-            this.CreateReportFile(this.jsonDir, this.jsonFile, jLog);
-            this.GenerateCucumberReport(this.cucumberReporterOptions);
-        }
-    });
 }
 
-export let JsonFormatter = new CucumberReportExtension().JsonFormatter;

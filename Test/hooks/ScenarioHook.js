@@ -36,61 +36,48 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var cucumber_1 = require("cucumber");
-var config_1 = require("../steps/config");
-var CucumberReportExtension_1 = require("../reporting/CucumberReportExtension");
 var protractor_1 = require("protractor");
-cucumber_1.defineSupportCode(function (_a) {
-    var registerHandler = _a.registerHandler, registerListener = _a.registerListener, setDefaultTimeout = _a.setDefaultTimeout;
-    setDefaultTimeout(50000);
-    registerHandler('BeforeFeature', function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            console.log("Executing before feature !!");
-            return [2 /*return*/];
-        });
-    }); });
-    registerHandler('BeforeScenario', function () { return __awaiter(_this, void 0, void 0, function () {
+var BeforeAll = require('cucumber').BeforeAll;
+var cucumber_1 = require("cucumber");
+var CucumberReportExtension_1 = require("../reporting/CucumberReportExtension");
+cucumber_1.setDefaultTimeout(50000);
+BeforeAll(function () { return __awaiter(_this, void 0, void 0, function () {
+    var jsonDir;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, protractor_1.browser.get('http://localhost:8808')];
+            case 1:
+                _a.sent();
+                jsonDir = process.cwd() + '/reports/json';
+                CucumberReportExtension_1.CucumberReportExtension.CreateReportFile(jsonDir);
+                console.log('Starting the application');
+                return [2 /*return*/];
+        }
+    });
+}); });
+cucumber_1.AfterAll(function () { return __awaiter(_this, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        protractor_1.browser.quit();
+        console.log("Cleanup!!");
+        return [2 /*return*/];
+    });
+}); });
+cucumber_1.After(function (Scenario) {
+    return __awaiter(this, void 0, void 0, function () {
+        var screenShot;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, protractor_1.browser.get(config_1.config.baseUrl)];
+                case 0:
+                    console.log('Executing After feature!!');
+                    if (!(Scenario.result.status === cucumber_1.Status.FAILED)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, protractor_1.browser.takeScreenshot()];
                 case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                    screenShot = _a.sent();
+                    this.attach(screenShot, 'image/png');
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
             }
         });
-    }); });
-    registerHandler('AfterStep', function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            console.log("Step executed");
-            return [2 /*return*/];
-        });
-    }); });
-    registerHandler('AfterScenario', function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            console.log("Scenario executed !!");
-            return [2 /*return*/];
-        });
-    }); });
-    registerHandler('AfterFeature', function () { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            console.log("Executing After feature !!");
-            return [2 /*return*/];
-        });
-    }); });
-    registerHandler('StepResult', function (StepResult) { return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            if (StepResult.isFailed()) {
-                return [2 /*return*/, protractor_1.browser.takeScreenshot().then(function (screenshot) {
-                        var decodedImage = new Buffer(screenshot, 'base64');
-                        StepResult.attachments.push({
-                            data: decodedImage.toString('base64'),
-                            mimeType: 'image/png'
-                        });
-                    })];
-            }
-            return [2 /*return*/];
-        });
-    }); });
-    registerListener(CucumberReportExtension_1.JsonFormatter);
+    });
 });
 //# sourceMappingURL=ScenarioHook.js.map

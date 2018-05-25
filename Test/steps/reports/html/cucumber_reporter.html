@@ -243,11 +243,15 @@ pre {
 .steps {
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: -9px;
+    margin-bottom: -4px;
 }
 
 .all-features {
     padding-top: 0.6em;
+}
+
+.keyword {
+    color: #616161;
 }
 
     </style>
@@ -262,8 +266,8 @@ pre {
           <a class="navbar-brand">Cucumberjs Report</a>
           <div class="project-name visible-md visible-lg">EACourseApp</div>
           <div class="label-container">
-            <span class="label label-success" title=scenarios>Passed: 3</span>
-            <span class="label label-danger" title=scenarios>Failed: 0</span>
+            <span class="label label-success" title=scenarios>Passed: 0</span>
+            <span class="label label-danger" title=scenarios>Failed: 2</span>
           </div>
         </div>
       </div>
@@ -271,7 +275,7 @@ pre {
 
     <div class="container">
 
-      <div class="generated-on">Fri May 25 2018 16:14:49 GMT-0400 (EDT)</div>
+      <div class="generated-on">Fri May 25 2018 17:47:30 GMT-0400 (EDT)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
@@ -362,9 +366,9 @@ pre {
                         <i class="glyphicon glyphicon-chevron-down"></i>
                         <b>Feature:</b>To work with home page
                         <span class="label-container">
-              <span class="label label-success" title="3 Scenarios Passed">3</span>
               
-              
+              <span class="label label-danger" title="2 Scenarios Failed">2</span>
+              <span class="label label-info" title="1 Scenarios Undefined">1</span>
               
               
               
@@ -384,17 +388,17 @@ pre {
                                 <a data-toggle="collapse" href="#collapseScenario___ourse_pp0_0">
                                     <div>
 
-                                        <div style="padding-right: 30px">
+                                        <div style="padding-right: 50px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
                                             <b>Scenario:</b>Click course of application
                                         </div>
                                         <div>
                             <span class="label-container">
-                              <span class="label label-success" title="3 Steps Passed">3</span>
                               
+                              <span class="label label-info" title="1 Steps Undefined">1</span>
                               
-                              
+                              <span class="label label-warning" title="3 Steps Skipped">3</span>
                               
                               
                             </span>
@@ -412,7 +416,48 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-info" title="Undefined"><i class="glyphicon glyphicon-flash"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I navigate to the application</span>
+                          
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+                                    <pre class=info>
+<br>Then(/^I navigate to the application$/, function(callback) {
+  // Write code here that turns the phrase above into concrete actions
+  callback(null, 'pending');
+});
+                        </pre>
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -420,7 +465,7 @@ pre {
                           <span> I get all the heading</span>
                           
                               <span class="step-duration">
-                               157ms
+                               0s
                               </span>
                             
                          
@@ -446,7 +491,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -454,7 +499,7 @@ pre {
                           <span> I click the &#39;Selenium framework development&#39; course</span>
                           
                               <span class="step-duration">
-                               434ms
+                               0s
                               </span>
                             
                          
@@ -480,7 +525,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -488,7 +533,7 @@ pre {
                           <span> I should see all course information in coursedetails page</span>
                           
                               <span class="step-duration">
-                               4ms
+                               0s
                               </span>
                             
                          
@@ -558,6 +603,8 @@ pre {
                             </p>
                             
                             
+                                
+                            
                         </div>
                     </div>
                 </div>
@@ -570,18 +617,18 @@ pre {
                                 <a data-toggle="collapse" href="#collapseScenario___ourse_pp0_1">
                                     <div>
 
-                                        <div style="padding-right: 30px">
+                                        <div style="padding-right: 50px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
                                             <b>Scenario:</b>Click course of application second time
                                         </div>
                                         <div>
                             <span class="label-container">
-                              <span class="label label-success" title="3 Steps Passed">3</span>
                               
                               
                               
-                              
+                              <span class="label label-warning" title="3 Steps Skipped">3</span>
+                              <span class="label label-danger" title="1 Steps Failed">1</span>
                               
                             </span>
                                         </div>
@@ -598,7 +645,62 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I navigate to application</span>
+                          
+                              <span class="step-duration">
+                               11ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+                                    <a href="#error0_10" data-toggle="collapse">+ Show Error</a>
+                                    <div id="error0_10" class="collapse">
+                                        <pre class=info>TypeError: Parameter "url" must be a string, not undefined
+    at Url.parse (url.js:103:11)
+    at urlParse (url.js:97:13)
+    at Url.resolve (url.js:654:29)
+    at Object.urlResolve [as resolve] (url.js:650:40)
+    at ProtractorBrowser.get (/usr/local/lib/node_modules/protractor/built/browser.js:653:17)
+    at HomePage.(anonymous) (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.ts:39:23)
+    at step (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:42:23)
+    at Object.next (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:23:53)
+    at /Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:17:71
+    at new Promise ((anonymous))
+    at __awaiter (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:13:12)
+    at HomePage.OpenBrowser (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:82:16)
+    at Object.(anonymous) (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.ts:13:20)
+    at step (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:32:23)
+    at Object.next (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:13:53)
+    at /Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:7:71</pre>
+                                    </div>
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -606,7 +708,7 @@ pre {
                           <span> I get all the heading</span>
                           
                               <span class="step-duration">
-                               73ms
+                               0s
                               </span>
                             
                          
@@ -632,7 +734,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -640,7 +742,7 @@ pre {
                           <span> I click the &#39;Selenium framework development&#39; course</span>
                           
                               <span class="step-duration">
-                               492ms
+                               0s
                               </span>
                             
                          
@@ -666,7 +768,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -674,7 +776,7 @@ pre {
                           <span> I should see &#39;Selenium framework development&#39; course in coursedetails page</span>
                           
                               <span class="step-duration">
-                               1ms
+                               0s
                               </span>
                             
                          
@@ -694,6 +796,8 @@ pre {
                             	</div>
                             </p>
                             
+                            
+                                
                             
                         </div>
                     </div>
@@ -707,18 +811,18 @@ pre {
                                 <a data-toggle="collapse" href="#collapseScenario___ourse_pp0_2">
                                     <div>
 
-                                        <div style="padding-right: 30px">
+                                        <div style="padding-right: 50px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
                                             <b>Scenario:</b>Search for course from External DataSource
                                         </div>
                                         <div>
                             <span class="label-container">
-                              <span class="label label-success" title="3 Steps Passed">3</span>
                               
                               
                               
-                              
+                              <span class="label label-warning" title="2 Steps Skipped">2</span>
+                              <span class="label label-danger" title="1 Steps Failed">1</span>
                               
                             </span>
                                         </div>
@@ -735,7 +839,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove"></i></span>
                                     
                                     
                                     <span class="text">
@@ -743,7 +847,7 @@ pre {
                           <span> I navigate to application</span>
                           
                               <span class="step-duration">
-                               2s 389ms
+                               1ms
                               </span>
                             
                          
@@ -753,6 +857,27 @@ pre {
                                     
                                     
 
+                                    
+                                    <a href="#error0_20" data-toggle="collapse">+ Show Error</a>
+                                    <div id="error0_20" class="collapse">
+                                        <pre class=info>TypeError: Parameter "url" must be a string, not undefined
+    at Url.parse (url.js:103:11)
+    at urlParse (url.js:97:13)
+    at Url.resolve (url.js:654:29)
+    at Object.urlResolve [as resolve] (url.js:650:40)
+    at ProtractorBrowser.get (/usr/local/lib/node_modules/protractor/built/browser.js:653:17)
+    at HomePage.(anonymous) (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.ts:39:23)
+    at step (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:42:23)
+    at Object.next (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:23:53)
+    at /Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:17:71
+    at new Promise ((anonymous))
+    at __awaiter (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:13:12)
+    at HomePage.OpenBrowser (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/pages/HomePage.js:82:16)
+    at Object.(anonymous) (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.ts:13:20)
+    at step (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:32:23)
+    at Object.next (/Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:13:53)
+    at /Users/andrewmcgovern/Desktop/EACourseAppUpgrade/Test/steps/HomeSteps.js:7:71</pre>
+                                    </div>
                                     
 
                                     
@@ -769,7 +894,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -777,7 +902,7 @@ pre {
                           <span> I enter text in search from external data source</span>
                           
                               <span class="step-duration">
-                               2ms
+                               0s
                               </span>
                             
                          
@@ -803,7 +928,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -811,7 +936,7 @@ pre {
                           <span> I get all the heading</span>
                           
                               <span class="step-duration">
-                               181ms
+                               0s
                               </span>
                             
                          
@@ -831,6 +956,8 @@ pre {
                             	</div>
                             </p>
                             
+                            
+                                
                             
                         </div>
                     </div>
@@ -868,16 +995,16 @@ pre {
         google.load("visualization", "1", {packages: ["corechart"]});
         google.setOnLoadCallback(function() {drawChart({
                                                             "title" : "Features",
-                                                            "failed" : 0,
-                                                            "passed" : 1,
+                                                            "failed" : 1,
+                                                            "passed" : 0,
                                                             "ambiguous" : 0
                                                         })
                                             });
         google.setOnLoadCallback(function() {drawChart({
                                                             "title" : "Scenarios",
-                                                            "failed" : 0,
-                                                            "passed" : 3,
-                                                            "notdefined" : 0,
+                                                            "failed" : 2,
+                                                            "passed" : 0,
+                                                            "notdefined" : 1,
                                                             "pending" : 0,
                                                             "skipped" : 0,
                                                             "ambiguous" : 0
@@ -953,6 +1080,7 @@ pre {
         $(this).next('a.screenshot').find('img').show();
     }
 });
+
     </script>
   </body>
 </html>
